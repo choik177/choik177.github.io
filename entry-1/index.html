@@ -1,26 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {font-family: Perandory;
-            text-align: center;
-            margin: 50px;
-            font-size: 2rem;}
-        h1 {color: rgb(125, 38, 219); }
-        img {max-width: 900px;}
-    </style>
+  <meta charset="UTF-8">
+  <title>Circles in Life</title>
+
+  <style>
+    body {
+      background: black;
+      color: white;
+      margin: 0;
+      height: 700pt;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;    
+      font-family: "Inter", sans-serif;
+      text-align: center; 
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .wrap {
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
+
+    .circle {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .circle:hover {
+      transform: scale(1.2);
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border: 2px solid white;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+    }
+
+    .home-btn:hover {
+      background: white;
+      color: black;
+    }
+  </style>
 </head>
+
 <body>
-    <style> 
-       body {background-color:black}
-         h2,h3 {font-family: Perandory;
-            margin: 10px;
-            color: rgb(255, 255, 255); }</style>
-    
-    <a href="../index.html">Back to Home</a>
-    <h1>Today's Fortune</h1>
-    <h2>Judgement</h2>
-        <img src="https://images.vexels.com/media/users/3/306753/isolated/preview/2fea4a81f514489708f73def29dd281a-black-tarot-card.png">
-    <h3>Change of position, renewal, outcome. </h3>    
+
+  <h1>Circles in Life</h1>
+
+  <div class="wrap" id="wrap">
+    <div class="circle" data-link="../entry-2/index.html" data-hover="#f8dfe6"></div>
+    <div class="circle" data-link="../entry-3/index.html" data-hover="blue"></div>
+    <div class="circle" data-link="../entry-4/index.html" data-hover="yellow"></div>
+    <div class="circle" data-link="../entry-5/index.html" data-hover="purple"></div>
+    <div class="circle" data-link="../entry-6/index.html" data-hover="turquoise"></div>
+    <div class="circle" data-link="../entry-7/index.html" data-hover="orange"></div>
+    <div class="circle" data-link="../entry-8/index.html" data-hover="#111"></div>
+    <div class="circle" data-link="../entry-9/index.html" data-hover="brown"></div>
+  </div>
+
+  <a class="home-btn" href="../index.html">Back to Home</a>
+
+  <script>
+    var circles = document.querySelectorAll(".circle");
+    var wrap = document.getElementById("wrap");
+
+    var total = circles.length;
+    var radius = 150;
+    var centerX = 400 / 2;
+    var centerY = 400 / 2;
+
+    for (var i = 0; i < total; i++) {
+      var angle = (i / total) * Math.PI * 2;
+      var x = Math.cos(angle) * radius;
+      var y = Math.sin(angle) * radius;
+      circles[i].style.left = (centerX + x - 40) + "px";
+      circles[i].style.top = (centerY + y - 40) + "px";
+    }
+
+    circles.forEach(function(c) {
+      var color = c.getAttribute("data-hover");
+
+      c.addEventListener("mouseenter", function() {
+        c.style.background = color;
+      });
+
+      c.addEventListener("mouseleave", function() {
+        c.style.background = "white";
+      });
+
+      c.addEventListener("click", function() {
+        var go = c.getAttribute("data-link");
+        window.location.href = go;
+      });
+    });
+  </script>
+
+</body>
+</html>

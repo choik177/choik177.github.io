@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Entry 2</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #f5cbd4;
+    background: #f5cbd4;
+    background-image: radial-gradient(circle, #4b2e15 30%, transparent 30%);
+    background-size: 40px 40px;
+    position: relative;
+  }
+
+  .title-box {
+    background: #4b2e15;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .odd {
+    width: 17px;
+    height: 17px;
+    background: #4b2e15;
+    position: absolute;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="title-box">FIND THE ODD</div>
+
+<div class="odd" id="odd"></div>
+
+<script>
+  const odd = document.getElementById("odd");
+  const cell = 40; 
+  const dot = 17;   
+
+  function moveOdd() {
+    const cols = Math.floor(window.innerWidth / cell);
+    const rows = Math.floor(window.innerHeight / cell);
+
+    const col = Math.floor(Math.random() * cols);
+    const row = Math.floor(Math.random() * rows);
+
+    const x = col * cell + (cell - dot) / 2;
+    const y = row * cell + (cell - dot) / 2;
+
+    odd.style.left = x + "px";
+    odd.style.top = y + "px";
+  }
+
+  moveOdd();
+
+  odd.onclick = function() {
+    odd.style.borderRadius = "0"; 
+    moveOdd();
+  };
+</script>
+
+</body>
+</html>
+
+<a href="../entry-1/index.html" class="arrow-btn">←</a>
+
+<style>
+  .arrow-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    text-decoration: none;
+    background: white;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+  }
+  .arrow-btn:hover {
+    background: black;
+    color: white;
+  }
+</style>

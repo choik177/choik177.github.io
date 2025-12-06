@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Circles</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 200vh;
+    background: white;
+    overflow-x: hidden;
+  }
+
+
+  .image-layer {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 350vh; 
+
+    background-image: url("../my-project/buubblescreen.png");
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    pointer-events: none; 
+    z-index: 10;         
+  }
+
+
+  .text-box {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    z-index: 1; 
+  }
+</style>
+</head>
+<body>
+
+<div class="image-layer"></div>
+
+<div class="text-box">CIRCLES.</div>
+
+</body>
+</html>

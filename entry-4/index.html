@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entry 4 - Loading Circles</title>
+  <style>
+    body {
+      margin: 0;
+      background: yellow;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .top-area {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .loader {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      animation: spin 3s linear infinite;
+    }
+
+    .dot {
+      width: 22px;
+      height: 22px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -11px 0 0 -11px;
+    }
+
+    .dot:nth-child(1) { transform: rotate(0deg) translateY(-75px); }
+    .dot:nth-child(2) { transform: rotate(40deg) translateY(-75px); }
+    .dot:nth-child(3) { transform: rotate(80deg) translateY(-75px); }
+    .dot:nth-child(4) { transform: rotate(120deg) translateY(-75px); }
+    .dot:nth-child(5) { transform: rotate(160deg) translateY(-75px); }
+    .dot:nth-child(6) { transform: rotate(200deg) translateY(-75px); }
+    .dot:nth-child(7) { transform: rotate(240deg) translateY(-75px); }
+    .dot:nth-child(8) { transform: rotate(280deg) translateY(-75px); }
+    .dot:nth-child(9) { transform: rotate(320deg) translateY(-75px); }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .content-box {
+      width: 100%;
+      background: black;
+      border-radius: 25px 25px 0 0;
+      padding: 70px 10px; 
+      box-sizing: border-box;
+      margin-top: -200px;  
+      line-height: 1.6;
+      color: white;
+    }
+
+
+    .content-box h1 {
+      margin-top: 0;
+      margin-bottom: 50px;
+      font-size: 48px; 
+      text-transform: lowercase;
+      color: white;
+      letter-spacing: 1.5px;
+    }
+
+    .content-box p {
+      margin: 0;
+      font-size: 16px;
+      color: white;
+      max-width: 600px;
+    }
+</style>
+
+  <div class="top-area">
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="content-box">
+    <h1>cycle</h1>
+    <p>
+      The shape of a circle represents change because it has no beginning and no end.
+      Like the cycle of seasons, life continues to move forward in repeating patterns.
+      A circle reminds us that change is not just a straight path but a continuous loop
+      where experiences come back in new forms. Just as a circle always comes back to
+      where it started, we too reconnect with parts of ourselves as we move through
+      different phases of life.
+    </p>
+  </div>
+  
+</body>
+</html>
+
+<a href="../entry-1/index.html" class="arrow-btn">←</a>
+
+<style>
+  .arrow-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    text-decoration: none;
+    background: white;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+  }
+  .arrow-btn:hover {
+    background: black;
+    color: white;
+  }
+</style>

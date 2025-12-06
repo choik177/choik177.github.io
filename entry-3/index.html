@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Entry 3</title>
+
+<style>
+  body {
+    margin: 0;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    padding-top: 80px; 
+  }
+
+  .box {
+    width: 80px;
+    height: 80px;
+    background: white;
+    transition: border-radius 0.3s;
+  }
+
+  .box:hover {
+    border-radius: 50%;
+  }
+
+
+  .title-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffbd4b;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+
+  .arrow-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    text-decoration: none;
+    background: white;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+  }
+  .arrow-btn:hover {
+    background: black;
+    color: white;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="title-box">TURN IT CIRCLE</div>
+
+<a href="../entry-1/index.html" class="arrow-btn">←</a>
+
+<div class="box"></div><div class="box"></div><div class="box"></div>
+<div class="box"></div><div class="box"></div><div class="box"></div>
+<div class="box"></div><div class="box"></div><div class="box"></div>
+
+</body>
+</html>

@@ -1,32 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Harmonic Collection</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home page</title>
   <style>
-        body {font-family: Perandory;
-            text-align: center;
-            margin: 50px;
-            font-size: 2rem;}
-        h1 {color: rgb(255, 255, 255); }
-        img {max-width: 200px;}
-    </style>
+    body{
+      margin:0; height:100vh; display:flex; justify-content:center; align-items:center;
+      background:#fff; overflow:hidden; user-select:none; -webkit-user-select:none;
+    }
+    .circle{
+      width:120px; height:120px; background:#000; border-radius:50%;
+      transform:scale(1); transition:transform .05s linear;
+    }
+  </style>
+</head>
 <body>
-    <h1>Welcome to my Harmonic Collection!</h1>
-    <a href="entry-1/index.html">
-    <img src="https://static.vecteezy.com/system/resources/thumbnails/052/244/378/small_2x/golden-fortune-cookie-free-png.png">     
-    </a>
-    <a href="entry-2/index.html">
-    <img src="https://static.vecteezy.com/system/resources/thumbnails/052/244/378/small_2x/golden-fortune-cookie-free-png.png">     
-    </a>
-     <a href="entry-3/index.html">
-    <img src="https://static.vecteezy.com/system/resources/thumbnails/052/244/378/small_2x/golden-fortune-cookie-free-png.png">     
-    </a>
-    
-</body>
+  <div class="circle" id="circle"></div>
 
-</html>s
+  <script>
+    const circle = document.getElementById('circle');
+    let scale = 1, growTimer = null, shrinkTimer = null;
+    const GROW_SPEED = 0.5;     // 누르는 동안 증가 속도
+    const SHRINK_SPEED = 0.2;   // 떼면 줄어드는 속도(비율)
+    const THRESHOLD = 30;       // 이 정도면 화면을 거의 덮음(대충치)
+
+    function grow(){
+      clearInterval(shrinkTimer);
+      growTimer = setInterval(()=>{
+        scale += GROW_SPEED;
+        circle.style.transform = `scale(${scale})`;
+        if(scale >= THRESHOLD){
+          clearInterval(growTimer);
+          window.location.href = "./entry-1/index.html";
+        }
+      }, 20);
+    }
+
+    function shrink(){
+      clearInterval(growTimer);
+      shrinkTimer = setInterval(()=>{
+        scale += (1 - scale) * SHRINK_SPEED;
+        circle.style.transform = `scale(${scale})`;
+        if(Math.abs(scale - 1) < 0.01){
+          scale = 1;
+          circle.style.transform = 'scale(1)';
+          clearInterval(shrinkTimer);
+        }
+      }, 20);
+    }
+
+    function onDown(e){ e.preventDefault(); clearInterval(growTimer); grow(); }
+    function onUp(e){ e.preventDefault(); shrink(); }
+
+    // 마우스 & 터치 (간단 버전)
+    circle.addEventListener('mousedown', onDown);
+    document.addEventListener('mouseup', onUp);
+    circle.addEventListener('touchstart', onDown, {passive:false});
+    document.addEventListener('touchend', onUp, {passive:false});
+  </script>
+</body>
+</html>
