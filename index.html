@@ -21,9 +21,9 @@
   <script>
     const circle = document.getElementById('circle');
     let scale = 1, growTimer = null, shrinkTimer = null;
-    const GROW_SPEED = 0.5;     // 누르는 동안 증가 속도
-    const SHRINK_SPEED = 0.2;   // 떼면 줄어드는 속도(비율)
-    const THRESHOLD = 30;       // 이 정도면 화면을 거의 덮음(대충치)
+    const GROW_SPEED = 0.5;    
+    const SHRINK_SPEED = 0.2;  
+    const THRESHOLD = 30;      
 
     function grow(){
       clearInterval(shrinkTimer);
@@ -53,7 +53,6 @@
     function onDown(e){ e.preventDefault(); clearInterval(growTimer); grow(); }
     function onUp(e){ e.preventDefault(); shrink(); }
 
-    // 마우스 & 터치 (간단 버전)
     circle.addEventListener('mousedown', onDown);
     document.addEventListener('mouseup', onUp);
     circle.addEventListener('touchstart', onDown, {passive:false});

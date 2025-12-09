@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CIRCLEXHIBITION</title>
+<title>entry-7</title>
 <style>
   body {
     margin: 0;
@@ -12,19 +12,18 @@
 
   .top-area {
     background: rgb(29, 22, 19);
-    padding: 20px; 
+    padding: 20px;
     text-align: center;
   }
 
   .top-area h1 {
     font-size: 30px;
     margin: 0;
-
   }
 
   .white {
     background: antiquewhite;
-    padding: 260px 20px; 
+    padding: 260px 20px;
   }
 
   .gallery {
@@ -33,11 +32,16 @@
     overflow-x: auto;
   }
 
+  /* ⭐ 동그라미 → hover 시 네모 */
   .gallery img {
     width: 260px;
     height: 360px;
     object-fit: cover;
-    border-radius: 18px;
+    border-radius: 50%;
+    transition: border-radius 0.4s ease;
+  }
+  .gallery img:hover {
+    border-radius: 0;
   }
 </style>
 </head>

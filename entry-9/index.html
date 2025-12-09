@@ -1,45 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Circle</title>
+<meta charset="UTF-8">
+<title>Entry-9</title>
+
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  .hero-img {
+    width: 100vw;
+    height: 70vh;
+    background-image: url("../my-project/braille.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .content {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  .content h2 {
+    font-size: 64px; 
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    text-align: center;  
+  }
+  .content p {
+    font-size: 15px; 
+    max-width: 700px; 
+    margin: 0 auto; 
+  }
+
+</style>
+
 </head>
+
 <body>
-  <h1>About this webstite</h1>
+
+<div class="hero-img"></div>
+
+<div class="content">
+  <h2>Circles in Quiet City</h2>
   <p>
-    A circle is a shape consisting of all points in a plane that are at a given distance from a given point, the centre.
-    The distance between any point of the circle and the centre is called the radius. The length of a line segment
-    connecting two points on the circle and passing through the centre is called the diameter. A circle bounds a region
-    of the plane called a disc.
+ Braille (/ˈbreɪl/ BRAYL, French: [bʁaj] ⓘ) is a tactile writing system used by blind or visually impaired people. It can be read either on embossed paper or by using refreshable braille displays that connect to computers and smartphone devices. Braille can be written using a slate and stylus, a braille writer, an electronic braille notetaker or with the use of a computer connected to a braille embosser. For blind readers, braille is an independent writing system, rather than a code of printed orthography.
   </p>
+</div>
+
 </body>
 </html>
 
-  <style>
-    body{
-    background: rgb(144, 93, 93); 
-    padding: 10px;
-    }
-    h1{
-      color: white;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 50px;
-      max-width: 1000px;  
-      margin-top:100px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    p{
-      color: white;
-      font-family: Helvetica;
-      font-size: 20px;
-      max-width: 1000px;  
-      margin-top:100px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-  </style>
+<a href="../entry-1/index.html" class="arrow-btn">←</a>
 
-<div style="text-align:center;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Circle_%28transparent%29.svg/768px-Circle_%28transparent%29.svg.png">
-</div>
+<style>
+  .arrow-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    text-decoration: none;
+    background: black;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    z-index: 1000; 
+  }
+  .arrow-btn:hover {
+    background: white;
+    color: black;
+  }
+</style>

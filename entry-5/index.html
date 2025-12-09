@@ -1,52 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Circles</title>
+<title>Entry-5</title>
 
 <style>
-body{
-  margin:0;
-  background:#d9d9d9;
-  font-family: Arial, sans-serif;
-}
-.circle{
-  width:34vw;
-  height:34vw;
-  border-radius:50%;
-  background:red;
-  position:absolute;
-}
-.c1{left:0;top:5vh;}
-.c2{left:33vw;top:5vh;}
-.c3{left:66vw;top:5vh;}
-.c4{left:0;top:47vh;}
-.c5{left:33vw;top:47vh;}
-.c6{left:66vw;top:47vh;}
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
 
-.text{
-  position:absolute;
-  font-size:2vw;  
-}
+  .hero-img {
+    width: 100vw;
+    height: 70vh;
+    background-image: url("../my-project/star.png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .content {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  .content h2 {
+    font-size: 64px;
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .content p {
+    font-size: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .arrow-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    text-decoration: none;
+    background: black;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    z-index: 1000;
+  }
+
+  .arrow-btn:hover {
+    background: white;
+    color: black;
+  }
 </style>
+
 </head>
 
 <body>
 
-<div class="circle c1"></div>
-<div class="circle c2"></div>
-<div class="circle c3"></div>
-<div class="circle c4"></div>
-<div class="circle c5"></div>
-<div class="circle c6"></div>
+<div class="hero-img"></div>
 
-<div class="text" style="left:3vw;top:10vh;">ROUND</div>
-<div class="text" style="left:38vw;top:10vh;">EARTH</div>
-<div class="text" style="left:72vw;top:10vh;">ENDLESS</div>
+<div class="content">
+  <h2>Circles in sky</h2>
+  <p>
+    The circle in the sky represents the infinite possibilities and the cyclical nature of life.
+    Just as the sun and moon follow their paths across the sky, we too have our journeys
+    that are ever-changing yet constant. This imagery invites us to reflect on our place
+    in the universe and the connections we share with all living things.
+  </p>
+</div>
 
-<div class="text" style="left:3vw;top:50vh;">GROWTH</div>
-<div class="text" style="left:38vw;top:50vh;">CYCLE</div>
-<div class="text" style="left:72vw;top:50vh;">LIFE</div>
+<a href="../entry-1/index.html" class="arrow-btn">←</a>
 
 </body>
 </html>
+
+<style>
+  .star {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    animation: blink 1s infinite alternate;
+  }
+
+  @keyframes blink {
+    from { transform: scale(0.5); }
+    to { transform: scale(1); }
+  }
+</style>
+
+<script>
+  const hero = document.querySelector(".hero-img");
+  hero.style.position = "relative";
+
+  for (let i = 0; i < 50; i++) { 
+    let s = document.createElement("div");
+    s.className = "star";
+    s.style.top = Math.random() * 100 + "%";
+    s.style.left = Math.random() * 100 + "%";
+    hero.appendChild(s);
+  }
+</script>

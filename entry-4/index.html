@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Entry 4 - Loading Circles</title>
+  <title>Entry 4</title>
+
   <style>
-    body {
+    body, html {
       margin: 0;
-      background: yellow;
+      padding: 0;
+      height: 100%;
       font-family: Arial, sans-serif;
-      color: white;
     }
 
     .top-area {
-      height: 100vh;
+      height: 70vh;
+      background: yellow;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -52,83 +54,83 @@
       to { transform: rotate(360deg); }
     }
 
-    .content-box {
+    .content {
       width: 100%;
-      background: black;
-      border-radius: 25px 25px 0 0;
-      padding: 70px 10px; 
+      padding: 40px 20px;
       box-sizing: border-box;
-      margin-top: -200px;  
+      background: white;
       line-height: 1.6;
-      color: white;
+      text-align: center;
     }
 
-
-    .content-box h1 {
-      margin-top: 0;
-      margin-bottom: 50px;
-      font-size: 48px; 
-      text-transform: lowercase;
-      color: white;
-      letter-spacing: 1.5px;
+    .content h1 {
+      font-size: 64px;
+      font-weight: bold;
+      margin: 0 0 20px 0;
+      color: black;
+      text-transform: none;
     }
 
-    .content-box p {
-      margin: 0;
-      font-size: 16px;
-      color: white;
-      max-width: 600px;
+    .content p {
+      font-size: 15px;
+      color: black;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+       text-align: left;
     }
-</style>
 
-  <div class="top-area">
-    <div class="loader">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-  </div>
+    .arrow-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 26px;
+      text-decoration: none;
+      background: black;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      z-index: 1000;
+    }
+    .arrow-btn:hover {
+      background: white;
+      color: black;
+    }
+  </style>
+</head>
 
-  <div class="content-box">
-    <h1>cycle</h1>
-    <p>
-      The shape of a circle represents change because it has no beginning and no end.
-      Like the cycle of seasons, life continues to move forward in repeating patterns.
-      A circle reminds us that change is not just a straight path but a continuous loop
-      where experiences come back in new forms. Just as a circle always comes back to
-      where it started, we too reconnect with parts of ourselves as we move through
-      different phases of life.
-    </p>
-  </div>
-  
-</body>
-</html>
+<body>
 
 <a href="../entry-1/index.html" class="arrow-btn">←</a>
 
-<style>
-  .arrow-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 26px;
-    text-decoration: none;
-    background: white;
-    color: black;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-  }
-  .arrow-btn:hover {
-    background: black;
-    color: white;
-  }
-</style>
+<div class="top-area">
+  <div class="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+
+<div class="content">
+  <h1>Circles in Cycle</h1>
+  <p>
+    The shape of a circle represents change because it has no beginning and no end.
+    Like the cycle of seasons, life continues to move forward in repeating patterns.
+    A circle reminds us that change is not just a straight path but a continuous loop
+    where experiences come back in new forms. Just as a circle always comes back to
+    where it started, we too reconnect with parts of ourselves as we move through
+    different phases of life.
+  </p>
+</div>
+
+</body>
+</html>
