@@ -34,33 +34,13 @@
     font-weight: bold;
     text-align: center;  
   }
+
   .content p {
     font-size: 15px; 
     max-width: 700px; 
     margin: 0 auto; 
   }
 
-</style>
-
-</head>
-
-<body>
-
-<div class="hero-img"></div>
-
-<div class="content">
-  <h2>Circles in Quiet City</h2>
-  <p>
- Braille (/ˈbreɪl/ BRAYL, French: [bʁaj] ⓘ) is a tactile writing system used by blind or visually impaired people. It can be read either on embossed paper or by using refreshable braille displays that connect to computers and smartphone devices. Braille can be written using a slate and stylus, a braille writer, an electronic braille notetaker or with the use of a computer connected to a braille embosser. For blind readers, braille is an independent writing system, rather than a code of printed orthography.
-  </p>
-</div>
-
-</body>
-</html>
-
-<a href="../entry-1/index.html" class="arrow-btn">←</a>
-
-<style>
   .arrow-btn {
     position: fixed;
     top: 20px;
@@ -74,10 +54,51 @@
     border-radius: 50%;
     text-align: center;
     line-height: 40px;
-    z-index: 1000; 
+    z-index: 1000;
   }
   .arrow-btn:hover {
     background: white;
     color: black;
   }
+
+  .drag-finger {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+    cursor: grab;
+    user-select: none;
+    z-index: 9999;
+  }
+  .drag-finger:active {
+    cursor: grabbing;
+  }
 </style>
+</head>
+
+<body>
+
+<div class="hero-img"></div>
+
+<div class="content">
+  <h2>Circles in Quiet City</h2>
+  <p>
+    Braille (/ˈbreɪl/ BRAYL, French: [bʁaj]) is a tactile writing system used by blind or visually impaired people.
+    It can be read on embossed paper or using refreshable braille devices. For blind readers, braille is an
+    independent writing system rather than a code of printed letters.
+  </p>
+</div>
+
+<a href="../entry-1/index.html" class="arrow-btn">←</a>
+
+<img src="https://pngimg.com/d/finger_PNG6297.png" class="drag-finger">
+
+<script>
+  const f = document.querySelector(".drag-finger");
+  let x = 0;
+  f.onmousedown = e => document.onmousemove = m => f.style.left = (x += m.movementX) + "px";
+  onmouseup = () => document.onmousemove = null;
+</script>
+
+</body>
+</html>
